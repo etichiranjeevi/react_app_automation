@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         BRANCH_NAME = 'main'
-        REPO_URL = 'https://github.com/gani6992/React_helloworld.git'
+        REPO_URL = 'https://github.com/etichiranjeevi/react_app_automation.git'
         TARGET_HOST = 'ubuntu@54.175.156.83'
         TARGET_DIR = '/var/www/html/my-react-app'
     }
