@@ -43,7 +43,7 @@ pipeline {
         stage('Deploy to Target EC2') {
             steps {
                 sh """
-                    ssh -o StrictHostKeyChecking=no ${TARGET_HOST} "sudo rm -rf ${TARGET_DIR} && sudo mkdir -p ${TARGET_DIR}"
+                    ssh -o StrictHostKeyChecking=no ${TARGET_HOST} "sudo rm -rf ${TARGET_DIR} && sudo mkdir -p ${TARGET_DIR} && sudo chown ubuntu:ubuntu ${TARGET_DIR}"
                     scp -o StrictHostKeyChecking=no -r build/* ${TARGET_HOST}:${TARGET_DIR}/
                 """
             }
